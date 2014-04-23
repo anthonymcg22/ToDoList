@@ -1,0 +1,17 @@
+﻿body {
+}
+.strike {
+    text-decoration: line-through;
+}
+#removeButton {
+    height: 16px;
+    width: 15px;
+    border: 1px black dotted;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 30px;
+}
+.hidden {
+    display: none;
+}
