@@ -1,14 +1,16 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>My to-do list app</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <section id="todoAppContainer">
-        <input id="input" type="text" placeholder="Enter item 1"/>
-        <button type="button" onclick="make();">Add Item</button>
-        <p></p>
+        <h2>Enter your To-Do Items</h2>
+        <h4>Move them up or down and cross them out as necessary</h4>
+        <input id="input" type="text" placeholder="Enter item"/>
+        <button class="btn btn-success" onclick="make();">Add Item</button>
         <ol id="list">
         </ol>
     </section>

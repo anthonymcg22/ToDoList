@@ -1,17 +1,29 @@
 ﻿body {
 }
+h2 h4 {
+    text-align: center;
+}
 .strike {
     text-decoration: line-through;
 }
-#removeButton {
-    height: 16px;
-    width: 15px;
+.button {
     border: 1px black dotted;
     border-radius: 3px;
     text-align: center;
-    display: inline-block;
+    display: inline;
     margin-left: 30px;
 }
-.hidden {
-    display: none;
+li {
+    padding: 5px;
+}
+div {
+    cursor: pointer;
+}
+#input {
+  margin-left: 150px;
+  margin-top: 100px;
+}
+#list {
+  margin-left: 135px;
+  margin-top: 40px;
 }
