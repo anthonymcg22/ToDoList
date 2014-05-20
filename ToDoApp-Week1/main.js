@@ -11,9 +11,24 @@ var runArray = function () {
 }
 var make = function () {
     if (input.value !== "")
+        var striked = [];  //create empty array to hold 1 or 0 depending on list items having a class or not
+    for (var i = 0; i < collect.length; i++) {
+        if (list.childNodes[i].firstChild.hasAttribute("class"))
+            //nth child of list is some '<li>' element and 1st child of that is <span>  "input value" </span
+            striked.push(1);
+        else
+            striked.push(0);
+    }
         collect.push(input.value);    //if input value is not blank push to array
     runArray();        //run array function is called
     input.value = "";    //clear input value after adding item
+    striked.push(0);
+
+    for (var i = 0; i < striked.length; i++) {
+        if (striked[i] === 1)
+            list.childNodes[i].firstChild.setAttribute("class", "strike");
+    };
+
 };
 var strike = function () {
     //if item has a strike class, remove it, else set it
@@ -23,9 +38,24 @@ var strike = function () {
     else { event.target.setAttribute("class", "strike"); }
 };
 var erase = function (location) {
+
+    var striked = [];  //create empty array to hold 1 or 0 depending on list items having a class or not
+    for (var i = 0; i < collect.length; i++) {
+        if (list.childNodes[i].firstChild.hasAttribute("class"))
+            //nth child of list is some '<li>' element and 1st child of that is <span>  "input value" </span
+            striked.push(1);
+        else
+            striked.push(0);
+    }
+    striked.splice(location, 1);
     collect.splice(location, 1);   //remove element from array at location
-    runArray();         //run array
-}
+    runArray();
+    //go through array and set strike class to corresponding items
+    for (var i = 0; i < striked.length; i++) {
+        if (striked[i] === 1)
+            list.childNodes[i].firstChild.setAttribute("class", "strike");
+    };
+};
 var moveUp = function (location) {
     if (location !== 0) {    //if item is not first list item because you can't move before 0
         var striked = [];  //create empty array to hold 1 or 0 depending on list items having a class or not
